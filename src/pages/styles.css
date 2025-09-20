@@ -1,0 +1,334 @@
+:root {
+            --primary-accent: #0D9488; 
+            --primary-accent-light: #F0FDFA;
+            --bg-main: #F8FAFC;
+            --bg-content: #ffffff;
+            --border-color: #E2E8F0;
+            --text-primary: #0F172A;
+            --text-secondary: #64748B;
+            --text-light: #94A3B8;
+            --green: #22C55E;
+            --yellow: #F59E0B;
+            --red: #EF4444;
+        }
+
+        body.dark-mode {
+            --primary-accent: #2DD4BF;
+            --primary-accent-light: #115E59;
+            --bg-main: #020617;
+            --bg-content: #0F172A;
+            --border-color: #334155;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-light: #64748B;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dashboard-container { min-height: 100vh; }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem; 
+            background-color: var(--bg-content);
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .brand-logo {
+            background-color: var(--primary-accent);
+            color: var(--bg-content);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        .navbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem; 
+        }
+        .user-avatar {
+            width: 36px; height: 36px; border-radius: 50%;
+            background-color: var(--primary-accent-light);
+            color: var(--primary-accent);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .main-content {
+            padding: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .page-header { 
+            margin-bottom: 1.5rem; 
+        }
+        .page-header h1 { 
+            font-size: 1.8rem; 
+            font-weight: 700; 
+        } 
+        .page-header p { 
+            font-size: 1rem; 
+            color: var(--text-secondary); 
+        }
+        .overall-attendance-card {
+            background-color: var(--bg-content);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+        }
+        .overall-stats { 
+            text-align: center; 
+        }
+        .overall-percentage { 
+            font-size: 3rem; 
+            font-weight: 700; 
+            color: var(--primary-accent); 
+        }
+        .overall-status { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 0.5rem; 
+            font-weight: 600; 
+            margin-top: 0.25rem; 
+        }
+        .stat-details { 
+            list-style: none; 
+            display: flex; 
+            gap: 1.5rem; 
+            width: 100%; 
+            justify-content: space-around;
+        }
+        .stat-detail-item { 
+            display: flex; 
+            flex-direction: column; 
+        }
+        .stat-detail-item span:first-child { 
+            color: var(--text-secondary); 
+            font-size: 0.8rem;
+        }
+        .stat-detail-item span:last-child { 
+            font-weight: 600; 
+            color: var(--text-primary); 
+            font-size: 1rem; 
+        }
+
+        .courses-section h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .courses-grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 1rem; 
+        } 
+        .course-card {
+            background-color: var(--bg-content);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+        .card-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            margin-bottom: 1rem; 
+        }
+        .course-info {
+            flex-grow: 1;
+        }
+        .course-title { 
+            font-size: 1.1rem; 
+            font-weight: 600; 
+        }
+        .status-tag { 
+            font-size: 0.75rem; 
+            font-weight: 600; 
+            padding: 0.25rem 0.6rem; 
+            border-radius: 99px; 
+        }
+        .status-tag.green { 
+            background-color: #D1FAE5; 
+            color: #065F46; 
+        }
+        .status-tag.yellow { 
+            background-color: #FEF3C7; 
+            color: #92400E; 
+        }
+        .status-tag.red { 
+            background-color: #FEE2E2; 
+            color: #991B1B; 
+        }
+        body.dark-mode .status-tag.green { 
+            background-color: #052e16; 
+            color: #6ee7b7; 
+        }
+        body.dark-mode .status-tag.yellow { 
+            background-color: #422006; 
+            color: #fcd34d; 
+        }
+        body.dark-mode .status-tag.red { 
+            background-color: #450a0a; 
+            color: #fca5a5; 
+        }
+        .attendance-percentage { 
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            margin-bottom: 0.75rem; 
+        }
+        .progress-bar-container { 
+            background-color: var(--bg-main); 
+            border-radius: 10px; 
+            height: 6px; 
+            width: 100%; 
+            overflow: hidden; 
+        }
+        .progress-bar { 
+            height: 100%; 
+            border-radius: 10px; 
+            width: var(--progress-width, 0%); 
+            background-color: var(--primary-accent); 
+        }
+        .card-footer { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-top: auto; 
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8rem; 
+        }
+        .footer-item { 
+            display: flex; 
+            align-items: center; 
+            gap: 0.5rem; 
+            color: var(--text-secondary);
+        }
+        .footer-item svg { 
+            fill: var(--text-secondary); 
+        }
+        .action-button {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-content);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.5rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-action-button {
+            font-family: 'Poppins', sans-serif;
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .card-action-button:hover {
+            background-color: var(--primary-accent-light);
+            border-color: var(--primary-accent);
+            color: var(--primary-accent);
+        }
+        .submit-button {
+            background-color: var(--primary-accent);
+            color: white;
+        }
+        
+        /* Facial Scanner Styles */
+        .facial-scanner-overlay { position: fixed; inset: 0; background-color: rgba(0,0,0,0.85); z-index: 50; display: flex; flex-direction: column; }
+        .scanner-header { background-color: var(--bg-content); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
+        .scanner-title { font-size: 1.2rem; font-weight: 600; }
+        .scanner-main { display: flex; flex: 1; overflow: hidden; }
+        .camera-view { flex: 3; background-color: #000; display: flex; align-items: center; justify-content: center; color: white; position: relative; }
+        .camera-view video { width: 100%; height: 100%; object-fit: cover; }
+        .camera-placeholder { position: absolute; text-align: center; padding: 2rem; }
+        .camera-placeholder-text { font-size: 1.5rem; opacity: 0.7; }
+        .loading-spinner { border: 4px solid rgba(255,255,255,0.3); border-top: 4px solid white; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 1rem; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .student-roster { flex: 1; background-color: var(--bg-content); padding: 1rem; overflow-y: auto; min-width: 320px; }
+        .roster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 1rem; }
+        .student-card { text-align: center; cursor: pointer; }
+        .student-avatar { width: 64px; height: 64px; border-radius: 50%; background-color: #E2E8F0; margin: 0 auto 0.5rem; border: 3px solid transparent; transition: border-color 0.2s; background-size: cover; background-position: center; }
+        .student-card.present .student-avatar { border-color: var(--green); }
+        .student-name { font-size: 0.8rem; color: var(--text-secondary); }
+        .scanner-actions { padding: 1rem; background-color: var(--bg-content); border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; gap: 1rem; }
+        
+        /* Responsive Styles */
+        @media (min-width: 768px) {
+            .navbar { 
+                padding: 1rem 3rem; 
+            }
+            .navbar-brand { 
+                font-size: 1.5rem;
+            }
+            .brand-logo { 
+                width: 36px; 
+                height: 36px; 
+                font-size: 1.2rem; 
+            }
+            .user-avatar {
+               width: 40px; 
+               height: 40px; 
+               font-size: 1.1rem; 
+            }
+            .main-content { 
+                padding: 2.5rem 3rem; 
+            }
+            .page-header h1 { 
+                font-size: 2.2rem; 
+            }
+            .overall-attendance-card {
+                flex-direction: row; 
+                align-items: center;
+                text-align: left;
+            }
+            .overall-stats { 
+                text-align: left; 
+            }
+            .courses-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+                gap: 1.5rem;
+            }
+        }
